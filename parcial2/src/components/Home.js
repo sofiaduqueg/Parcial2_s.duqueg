@@ -21,13 +21,12 @@ useEffect(() => {
         fetch(url).then((response) => response.json()).then((data) => {
             setBooksList(data);
             localStorage.setItem("booksList", JSON.stringify(data));
-            console.log(data);
         })
     }
 }, []);
 
 
-const booksSearched = filterBooks.map((bookI) => (
+const booksSearched = booksList.map(bookI) => (
     <Book
     image={bookI.image}
     ISBN={bookI.isbn}
@@ -44,7 +43,7 @@ return (
                 <div class="col">
                 </div>
                 <div class="col">
-                    
+
                 </div>
                 <div class="col">Column
                 </div>
